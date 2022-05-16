@@ -1,7 +1,7 @@
 @echo off
 rem 1.) robocopy переносит файлы старше определенной даты из указанной директории с параметром мультипоточности,
 rem 2.) 7z архивирует папку с перенесенными файлами,
-rem 3.) добавляет MD5 хэш к логам robocopy.
+rem 3.) добавляет MD5 хэш архива к логам robocopy.
 1>nul chcp 65001
 rem Сверяем часы
 for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
