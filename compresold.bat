@@ -8,7 +8,6 @@ for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "d
 set "YY=%dt:~2,2%" & set "YYYY=%dt:~0,4%" & set "MM=%dt:~4,2%" & set "DD=%dt:~6,2%"
 set "HH=%dt:~8,2%" & set "Min=%dt:~10,2%" & set "Sec=%dt:~12,2%"
 set "timeStamp=%YYYY%-%MM%-%DD%_%HH%-%Min%"
-set "timeStampLess=%YYYY%-%MM%-%DD%"
 rem Смотрим установлен ли архиватор
 set zip="%ProgramFiles%\7-Zip\7z.exe"
 if not exist %zip% (
@@ -31,8 +30,8 @@ echo  * в директории
 echo  * %FROM%
 echo  * начнется через 10 секунд
 echo  *-------------------------------*
-echo  * Запуск - нажми 1              *
-echo  * Отмена - нажми 2              *
+echo  * Запуск - нажмите 1            *
+echo  * Отмена - нажмите 2            *
 echo  #*******************************#
 Choice /c 12 /t 10 /d 1
 rem Переменные ErrorLevel определяют выбор пользователя или по истечению 10 секунд запускается процесс.
